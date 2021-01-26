@@ -1,15 +1,15 @@
 import multer from 'multer'
 
-const storage = multer.diskStorage({
-    destination: 'temp',
+const storageInvoice = multer.diskStorage({
+    destination: 'bucket/invoice',
     filename: (req, file, cb) => {
         cb(null, file.originalname)
     }
 })
 
-const midMulter = multer({
-    storage: storage,
-    dest: 'temp'
+const midMulterInvoice = multer({
+    storage: storageInvoice,
+    dest: 'bucket/invoice'
 }).single('file')
 
-export default midMulter
+export default midMulterInvoice
