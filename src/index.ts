@@ -7,7 +7,7 @@ import {Config} from "./config"
 
 function index(req: Request, res: Response) {
     res.json({
-        message: 'Welcome api mail!'
+        message: 'Welcome api files!'
     })
 }
 

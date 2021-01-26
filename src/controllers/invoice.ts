@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 
 class InvoiceController {
     upload(req: Request, res: Response) {
-        res.json('file upload!')
+        res.json({'file': req.file.filename, 'message': 'File Uploaded!'})
     }
 }
 
