@@ -1,5 +1,5 @@
 import {NextFunction, Request, Response} from "express";
-import {Config} from "../config";
+import {SECRET_TOKEN} from "../config";
 import {TokenService} from "../services/main";
 
 export class Auth {
@@ -8,7 +8,7 @@ export class Auth {
 
         let token = '';
         if (secret) {
-            if (secret === Config.SECRET_TOKEN) {
+            if (secret === SECRET_TOKEN) {
                 const data = 'permitido'
                 token = TokenService.createToken(data);
             }

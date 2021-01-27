@@ -3,7 +3,7 @@ import http from 'http'
 import cors from 'cors'
 import {Auth} from "./middlewares/auth"
 import routes from './routes/routes'
-import {Config} from "./config"
+import {PORT} from "./config"
 
 function index(req: Request, res: Response) {
     res.json({
@@ -22,8 +22,8 @@ function main() {
     app.post('/login', Auth.login)
     app.use(routes)
 
-    server.listen(Config.PORT, () => {
-        console.log(`server online in: localhost:${Config.PORT}`)
+    server.listen(PORT, () => {
+        console.log(`server online in: localhost:${PORT}`)
     })
 }
 

@@ -6,7 +6,9 @@ import {invoiceController} from "../controllers/invoice";
 function routes(): Router {
     const router: Router = Router()
 
-    router.post('/upload-invoice/', [Auth.isAuth, midMulter], invoiceController.upload)
+    router.post('/invoice/', [Auth.isAuth, midMulter], invoiceController.upload)
+    router.get('/invoice/:name', Auth.isAuth, invoiceController.getInvoice)
+    router.delete('/invoice/:name', Auth.isAuth, invoiceController.deleteInvoice)
 
     return router
 }

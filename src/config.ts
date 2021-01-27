@@ -1,6 +1,6 @@
 import * as process from "process";
 
-export class Config {
-    static PORT = process.env.PORT || 2000
-    static SECRET_TOKEN = 'miclavedetokens'
-}
+export const PORT = process.env.PORT || 2000
+export const SECRET_TOKEN = 'miclavedetokens'
+
+export const PATH_INVOICES = 'bucket/invoice'
