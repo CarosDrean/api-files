@@ -18,7 +18,7 @@ function main() {
     const app = express_1.default();
     const server = http_1.default.createServer(app);
     app.use(express_1.default.json());
-    app.use(cors_1.default({ origin: ['http://localhost:3000', 'https://holosalud.org', 'http://localhost:4200'] }));
+    app.use(cors_1.default({ origin: ['https://inventario.holosalud.org', 'https://holosalud.org', 'http://localhost:4200'] }));
     app.get('/', index);
     app.post('/login', auth_1.Auth.login);
     app.use(routes_1.default);
