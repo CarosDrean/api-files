@@ -11,7 +11,7 @@ function routes() {
     const router = express_1.Router();
     router.post('/invoice/', [auth_1.Auth.isAuth, multer_1.default], invoice_1.invoiceController.upload);
     router.get('/invoice/', invoice_1.invoiceController.getInvoice);
-    router.delete('/invoice/:params', auth_1.Auth.isAuth, invoice_1.invoiceController.deleteInvoice);
+    router.delete('/invoice/:name', auth_1.Auth.isAuth, invoice_1.invoiceController.deleteInvoice);
     return router;
 }
 exports.default = routes();
