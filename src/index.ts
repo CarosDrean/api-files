@@ -16,7 +16,7 @@ function main() {
     const server  = http.createServer(app)
 
     app.use(express.json())
-    app.use(cors({origin: ['http://localhost:3000', 'https://holosalud.org', 'http://localhost:4200']}))
+    app.use(cors({origin: ['https://inventario.holosalud.org', 'https://holosalud.org', 'http://localhost:4200']}))
 
     app.get('/', index)
     app.post('/login', Auth.login)
