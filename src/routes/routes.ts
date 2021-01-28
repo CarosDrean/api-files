@@ -8,7 +8,7 @@ function routes(): Router {
 
     router.post('/invoice/', [Auth.isAuth, midMulter], invoiceController.upload)
     router.get('/invoice/', invoiceController.getInvoice)
-    router.delete('/invoice/:params', Auth.isAuth, invoiceController.deleteInvoice)
+    router.delete('/invoice/:name', Auth.isAuth, invoiceController.deleteInvoice)
 
     return router
 }
