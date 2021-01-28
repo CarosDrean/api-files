@@ -19,6 +19,16 @@ export class Auth {
         });
     }
 
+    static solveToken(token: string): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            TokenService.decodeToken(token).then(res => {
+                resolve(true)
+            }).catch(res => {
+                reject('No Autorizado')
+            })
+        })
+    }
+
     static isAuth(req: Request, res: Response, next: NextFunction) {
         if (!req.headers.authorization) {
             return res.status(403).send({ message: 'No tienes autorización' });
