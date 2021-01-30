@@ -21,6 +21,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PATH_INVOICES = exports.SECRET_TOKEN = exports.PORT = void 0;
 const process = __importStar(require("process"));
+const utils_1 = require("./utils/utils");
 exports.PORT = process.env.PORT || 2000;
-exports.SECRET_TOKEN = 'miclavedetokens';
+exports.SECRET_TOKEN = utils_1.Utils.getConfiguration().secretToken;
 exports.PATH_INVOICES = 'bucket/invoice';
