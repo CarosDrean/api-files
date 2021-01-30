@@ -1,3 +1,4 @@
 node_modules
 .idea
 bucket
+src/configuration.json
