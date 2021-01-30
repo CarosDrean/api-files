@@ -1,7 +1,7 @@
 import {Configuration} from "../interfaces/configuration";
 
 declare var require: any;
-const json = require('../configuration.json')
+const json = require('../../configuration.json')
 
 export class Utils {
     static getConfiguration(): Configuration {
