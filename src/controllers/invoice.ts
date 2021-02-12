@@ -35,6 +35,13 @@ class InvoiceController {
     deleteInvoice(req: Request, res: Response) {
         const name = req.params.name
         const path = PATH_INVOICES + '/' + name
+        fs.readFile(path, (err, data) => {
+            if(err) {
+                res.writeHead(404);
+                res.end(JSON.stringify(err));
+                return;
+            }
+        })
         InvoiceController.deleteFile(path)
         res.json('Invoice Deleted')
     }
